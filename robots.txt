@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rangoxrangox-cpu.github.io/gestorflow/sitemap.xml

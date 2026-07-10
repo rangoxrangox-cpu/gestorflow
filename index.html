@@ -3,173 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GestorFlow - Sistema Operacional para Gestores de Tráfego</title>
-    <meta name="description" content="Fechou seu primeiro cliente de tráfego pago e não sabe como organizar a operação? Use uma esteira pronta para organizar entregas e atender com extremo profissionalismo.">
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.6; }
-        .hero { background: #0f172a; color: white; text-align: center; padding: 80px 20px; }
-        .hero h1 { font-size: 38px; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px auto; color: #cbd5e1; }
-        .hero img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-bottom: 30px; }
-        
-        .content { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .section { background: white; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 40px; margin-bottom: 30px; }
-        .section h2 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px; }
-        
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
-        
-        ul.check-list { list-style: none; padding: 0; }
-        ul.check-list li { padding-left: 30px; position: relative; margin-bottom: 15px; }
-        ul.check-list li::before { content: '✓'; color: #10b981; font-weight: bold; position: absolute; left: 0; top: 0; font-size: 18px; }
-        
-        .btn { display: inline-block; background: #2563eb; color: white; padding: 18px 36px; text-decoration: none; font-size: 20px; font-weight: bold; border-radius: 8px; margin-top: 10px; cursor: pointer; border: none; transition: 0.3s; width: 100%; max-width: 400px; text-align: center; }
-        .btn:hover { background: #1d4ed8; transform: translateY(-2px); }
-        .btn:disabled, .btn[disabled] { background: #94a3b8; cursor: not-allowed; transform: none; }
-        
-        .faq { margin-bottom: 15px; }
-        .faq h4 { margin: 0 0 5px 0; color: #1e293b; font-size: 18px; }
-        .faq p { margin: 0 0 15px 0; color: #475569; }
-        
-        .guarantee { display: flex; align-items: center; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .guarantee-icon { font-size: 40px; margin-right: 20px; }
-        
-        .footer { text-align: center; padding: 40px 20px; background: #f1f5f9; color: #64748b; font-size: 14px; }
-        .footer a { color: #64748b; margin: 0 10px; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-    </style>
+    <title>GestorFlow | Sistema de Client Ops para Gestores de Tráfego</title>
+    <meta name="description" content="Organize briefing, onboarding, acessos, aprovações, relatórios e offboarding dos seus clientes de tráfego pago com uma esteira operacional pronta e editável.">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rangoxrangox-cpu.github.io/gestorflow/">
+    <meta property="og:title" content="GestorFlow | Sistema de Client Ops para Gestores de Tráfego">
+    <meta property="og:description" content="Organize briefing, onboarding, acessos, aprovações, relatórios e offboarding dos seus clientes de tráfego pago com uma esteira operacional pronta e editável.">
+    <meta property="og:image" content="https://rangoxrangox-cpu.github.io/gestorflow/imagens/gestorflow-social.png">
+    
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="hero">
-        <h1>Fechou seu primeiro cliente de tráfego pago e não sabe como organizar a operação?</h1>
-        <p>Use uma esteira pronta para coletar acessos, organizar entregas, registrar aprovações e atender com extremo profissionalismo. Chega de perder informações no WhatsApp.</p>
-        <img src="capa.png" alt="GestorFlow Capa do Produto" width="400">
-        <br>
-        <button id="btn-comprar-topo" class="btn">Checkout em configuração</button>
+
+    <!-- 1. Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Gestor<span>Flow</span></div>
+            <nav class="nav-links">
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#incluso">O que está incluso</a>
+                <a href="#por-dentro">Veja por dentro</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="#" class="btn checkout-btn-sales disabled" style="padding: 10px 20px; font-size: 0.9rem;">Checkout em configuração</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container">
+            <div class="badges">
+                <div class="badge"><span class="badge-icon">✓</span> Acesso Imediato</div>
+                <div class="badge"><span class="badge-icon">✓</span> Arquivos Editáveis</div>
+                <div class="badge"><span class="badge-icon">✓</span> Excel, Docs e PDF</div>
+            </div>
+            
+            <h1 class="hero-title">Organize seus clientes de tráfego como um <br><span class="gradient-text">profissional desde o primeiro contrato</span></h1>
+            <p class="hero-subtitle">Briefing, onboarding, acessos, aprovações, relatórios e offboarding em uma esteira operacional pronta, editável e fácil de implementar.</p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn checkout-btn-sales disabled">Checkout em configuração</a>
+                <a href="#como-funciona" class="btn btn-secondary">Ver como funciona</a>
+            </div>
+
+            <div class="hero-mockup mt-4">
+                <img src="imagens/capa-gestorflow.png" alt="Capa Premium GestorFlow">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Trust Strip -->
+    <div class="trust-strip">
+        <div class="container trust-items">
+            <div class="trust-item">✓ Organização Centralizada</div>
+            <div class="trust-item">✓ Menos Informações Perdidas</div>
+            <div class="trust-item">✓ Processos Editáveis</div>
+            <div class="trust-item">✓ Implantação Rápida</div>
+            <div class="trust-item">✓ Feito para Gestores de Tráfego</div>
+        </div>
     </div>
 
-    <div class="content">
-        <div class="section">
-            <h2>O Problema do Gestor Iniciante</h2>
-            <p>Se você já subiu uma campanha, sabe que o problema nunca é apertar os botões no Gerenciador de Anúncios. O problema real é o <strong>Client Ops (Operação de Clientes)</strong>:</p>
-            <ul class="check-list">
-                <li>O cliente que demora 2 semanas para enviar o acesso da BM.</li>
-                <li>O cliente que muda de ideia no meio da campanha e depois culpa você pela falta de vendas.</li>
-                <li>O cliente que não entende o escopo e pede para você editar vídeos de graça.</li>
-                <li>Você se sentindo amador ao cobrar pagamentos e aprovações.</li>
+    <!-- 4. Problem Section -->
+    <section id="problema" class="container">
+        <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: 20px;">Seu cliente chegou.<br>A sua operação está pronta?</h2>
+        <p class="text-center" style="color: var(--text-secondary); max-width: 800px; margin: 0 auto;">A sensação de estar improvisando destrói a confiança do seu cliente. Não perca informações no WhatsApp nem atrase relatórios.</p>
+        
+        <div class="problem-comparison">
+            <div class="problem-card glass-panel">
+                <h3>Operação Improvisada</h3>
+                <ul class="comparison-list">
+                    <li>Informações espalhadas no WhatsApp</li>
+                    <li>Acessos que nunca chegam completos</li>
+                    <li>Campanhas rodando sem aprovação formal</li>
+                    <li>Pedidos de alteração fora do escopo</li>
+                    <li>Relatórios entregues com atraso</li>
+                    <li>Sensação constante de desorganização</li>
+                </ul>
+            </div>
+            <div class="solution-card glass-panel">
+                <h3>Operação com GestorFlow</h3>
+                <ul class="comparison-list">
+                    <li>Briefing documentado e centralizado</li>
+                    <li>Checklist exato de onboarding e acessos</li>
+                    <li>Registro formal de todas as aprovações</li>
+                    <li>Escopo operacional blindado por matriz</li>
+                    <li>Relatórios padronizados e pontuais</li>
+                    <li>Imagem profissional e tecnológica</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Timeline Solution -->
+    <section id="como-funciona" class="container">
+        <h2 class="text-center gradient-text" style="font-size: 2.5rem; margin-bottom: 10px;">O GestorFlow organiza a jornada completa do cliente</h2>
+        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">Uma esteira que conecta todas as etapas operacionais.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>1. Fechamento e Briefing</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Coleta de dados essenciais logo após o sim.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>2. Onboarding e Acessos</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Passo a passo para receber os acessos sem fricção.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>3. Aprovações e Execução</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Garantia de que campanhas só sobem com o aval do cliente.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>4. Relatório e Offboarding</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Apresentação de resultados e protocolo seguro de saída.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Included Components -->
+    <section id="incluso" class="container">
+        <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: 20px;">O que está incluído no ecossistema</h2>
+        
+        <div class="components-grid">
+            <div class="component-card glass-panel">
+                <div class="component-icon">🧭</div>
+                <h4 class="component-title">Guia Comece Aqui</h4>
+                <p class="component-desc">Manual de implementação rápida para você não perder tempo.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">📝</div>
+                <h4 class="component-title">Briefing do Cliente</h4>
+                <p class="component-desc">Documento para extrair o ICP, tom de voz e meta do cliente.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">✅</div>
+                <h4 class="component-title">Checklist de Onboarding</h4>
+                <p class="component-desc">Passo a passo das primeiras 48h com o cliente.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">🔑</div>
+                <h4 class="component-title">Checklist de Acessos</h4>
+                <p class="component-desc">Lista exata para solicitar contas de anúncios e BM.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">📊</div>
+                <h4 class="component-title">Matriz de Responsabilidades</h4>
+                <p class="component-desc">Documento que alinha quem faz o que na parceria.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">⚖️</div>
+                <h4 class="component-title">Definição Operacional</h4>
+                <p class="component-desc">Proteção do escopo (o que você faz e o que não faz).</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">👍</div>
+                <h4 class="component-title">Formulário de Aprovação</h4>
+                <p class="component-desc">Registro formal para subida de campanhas e criativos.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">🔄</div>
+                <h4 class="component-title">Registro de Alterações</h4>
+                <p class="component-desc">Acompanhamento de pedidos extras e revisões.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">📈</div>
+                <h4 class="component-title">Relatório Mensal</h4>
+                <p class="component-desc">Dashboard profissional e editável para apresentação.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">👋</div>
+                <h4 class="component-title">Checklist de Offboarding</h4>
+                <p class="component-desc">Encerramento amigável e remoção segura de acessos.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">💻</div>
+                <h4 class="component-title">Dashboard Central</h4>
+                <p class="component-desc">Painel em Excel para gerenciar todos os clientes ativos.</p>
+            </div>
+            <div class="component-card glass-panel">
+                <div class="component-icon">💬</div>
+                <h4 class="component-title">Banco de Mensagens</h4>
+                <p class="component-desc">Scripts prontos para respostas no WhatsApp e E-mail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Previews Gallery -->
+    <section id="por-dentro" class="container">
+        <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: 40px;">Veja a qualidade por dentro</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="imagens/mockup-dashboard.png" alt="Preview do Dashboard Central">
+                <div class="gallery-caption">Dashboard de Clientes Ativos</div>
+            </div>
+            <div class="gallery-item">
+                <img src="imagens/preview-briefing.png" alt="Preview do Formulário de Briefing">
+                <div class="gallery-caption">Estrutura de Briefing Profissional</div>
+            </div>
+            <div class="gallery-item">
+                <img src="imagens/preview-onboarding.png" alt="Preview do Onboarding">
+                <div class="gallery-caption">Kanban / Checklist de Onboarding</div>
+            </div>
+            <div class="gallery-item">
+                <img src="imagens/preview-relatorio.png" alt="Preview do Relatório Mensal">
+                <div class="gallery-caption">Relatório Analítico de Conversão</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Para Quem É -->
+    <section class="container" style="padding-top: 50px;">
+        <div class="problem-comparison">
+            <div style="padding: 20px;">
+                <h3 style="color: var(--text-primary); margin-bottom: 20px;">Ideal Para:</h3>
+                <ul class="pricing-list" style="margin:0;">
+                    <li>Gestor de tráfego no primeiro cliente</li>
+                    <li>Profissionais gerenciando até cinco clientes</li>
+                    <li>Freelancers saindo da improvisação</li>
+                    <li>Quem precisa padronizar entregas e reduzir caos</li>
+                </ul>
+            </div>
+            <div style="padding: 20px;">
+                <h3 style="color: var(--text-secondary); margin-bottom: 20px;">Não é Para:</h3>
+                <ul class="pricing-list" style="margin:0; opacity: 0.7;">
+                    <li style="color: var(--text-secondary);">Quem busca aprender a subir campanhas</li>
+                    <li style="color: var(--text-secondary);">Quem espera software complexo com automações e login</li>
+                    <li style="color: var(--text-secondary);">Quem busca assessoria jurídica (não substitui advogado)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Como Começar -->
+    <section class="container text-center">
+        <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Implementação em 3 Passos</h2>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="glass-panel" style="flex: 1; min-width: 250px;">
+                <h1 style="color: var(--accent-cyan); font-size: 3rem; margin-bottom: 10px;">1</h1>
+                <h4>Acesse</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Receba os arquivos imediatamente pela Kiwify.</p>
+            </div>
+            <div class="glass-panel" style="flex: 1; min-width: 250px;">
+                <h1 style="color: var(--accent-purple); font-size: 3rem; margin-bottom: 10px;">2</h1>
+                <h4>Personalize</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Adapte os logos e regras para a sua identidade.</p>
+            </div>
+            <div class="glass-panel" style="flex: 1; min-width: 250px;">
+                <h1 style="color: var(--accent-green); font-size: 3rem; margin-bottom: 10px;">3</h1>
+                <h4>Implemente</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Siga o guia e rode a esteira no seu próximo cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Pricing Offer -->
+    <section class="container">
+        <div class="pricing-section glass-panel pricing-card">
+            <h2 class="gradient-text" style="font-size: 2rem;">Acesso Completo</h2>
+            <p style="color: var(--text-secondary);">GestorFlow — Sistema de Client Ops</p>
+            
+            <div class="pricing-price">R$ 47<span>,00</span></div>
+            <p style="font-size: 0.9rem; color: var(--accent-green);">Preço de lançamento da primeira versão</p>
+            
+            <ul class="pricing-list">
+                <li>Arquivos Editáveis (Excel, Docs)</li>
+                <li>Dashboard de Clientes Ativos</li>
+                <li>Checklists e Formulários</li>
+                <li>Banco de Mensagens Scripts</li>
+                <li>Guia de Implementação Rápida</li>
             </ul>
-        </div>
 
-        <div class="section">
-            <h2>A Solução: O Fluxo GestorFlow</h2>
-            <p>O GestorFlow não é um "pacote de planilhas genéricas". É o fluxo exato de trabalho de uma agência organizada, transformado em 12 arquivos editáveis (DOCX e XLSX) para você copiar e colar com seus clientes.</p>
-            
-            <div class="grid-2">
-                <div>
-                    <h3>1. Alinhamento Inicial</h3>
-                    <ul>
-                        <li><strong>Guia Comece Aqui:</strong> O mapa do tesouro.</li>
-                        <li><strong>Briefing:</strong> Entenda o negócio antes de subir campanhas.</li>
-                        <li><strong>Matriz de Responsabilidades:</strong> O que você faz x O que o cliente faz.</li>
-                        <li><strong>Definição de Escopo:</strong> Evite trabalho de graça.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>2. Execução Segura</h3>
-                    <ul>
-                        <li><strong>Checklists de Onboarding e Acessos:</strong> Pegue os acessos sem pedir a senha pessoal dele.</li>
-                        <li><strong>Aprovação Formal:</strong> Formulário para aprovar a verba.</li>
-                        <li><strong>Registro de Alterações:</strong> Sua defesa caso a campanha pare de performar.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>3. Gestão e Retenção</h3>
-                    <ul>
-                        <li><strong>Dashboard Central (Excel):</strong> Controle status, MRR e pendências de todos os clientes em uma única tela. Fórmulas já configuradas.</li>
-                        <li><strong>Modelo de Relatório:</strong> Vá direto ao ponto (ROAS, CPA) sem enrolação técnica.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>4. Comunicação Profissional</h3>
-                    <ul>
-                        <li><strong>Banco de Mensagens:</strong> Scripts prontos para cobrar, pedir aprovação e dar avisos de bloqueio com elegância.</li>
-                        <li><strong>Offboarding:</strong> Como encerrar o contrato amigavelmente.</li>
-                    </ul>
-                </div>
-            </div>
+            <a href="#" class="btn checkout-btn-sales disabled" style="width: 100%; margin-top: 20px;">Checkout em configuração</a>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 16px;">Pagamento 100% seguro pela Kiwify.</p>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>Para quem é recomendado?</h2>
-            <p><strong>SIM:</strong> Para gestores de tráfego iniciantes e intermediários, freelancers de marketing digital, e donos de "EuGências" que querem organizar a casa e parar de parecer amadores aos olhos dos clientes.</p>
-            <p><strong>NÃO:</strong> Para grandes agências que já possuem ERPs complexos ou pessoas procurando aprender "como apertar botões" no Facebook Ads. Isso não é um curso de tráfego, é um sistema operacional.</p>
+    <!-- 13. Guarantee -->
+    <section class="container text-center" style="padding-top: 0;">
+        <div class="glass-panel" style="max-width: 600px; margin: 0 auto; display: flex; align-items: center; gap: 20px; border-color: rgba(16, 185, 129, 0.3);">
+            <div style="font-size: 3rem;">🛡️</div>
+            <div style="text-align: left;">
+                <h4 style="margin-bottom: 8px; color: var(--text-primary);">Você pode solicitar o reembolso integral dentro do prazo de sete dias.</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Conheça o material. Se perceber que não atende à sua necessidade operacional, basta acionar a garantia através da plataforma.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq">
-                <h4>Esses documentos substituem um contrato feito por advogado?</h4>
-                <p>Não. Os materiais são alinhamentos operacionais e checklists organizacionais. Eles organizam a prestação do serviço, mas não substituem o aconselhamento jurídico de um advogado (OAB).</p>
+    <!-- 14. FAQ -->
+    <section id="faq" class="container">
+        <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: 40px;">Perguntas Frequentes</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-q">O GestorFlow é um curso ou um software (SaaS)?</div>
+                <div class="faq-a">Nenhum dos dois. É um pacote de ativos, planilhas (Excel) e documentos (Docs) prontos e estruturados. Você fará o download e usará na sua própria máquina.</div>
             </div>
-            <div class="faq">
-                <h4>Quais são os formatos dos arquivos?</h4>
-                <p>O pacote inclui documentos em Microsoft Word (DOCX) e Microsoft Excel (XLSX), para que você possa editá-los facilmente, colocar sua logomarca e salvar como PDF para enviar aos clientes.</p>
+            <div class="faq-item">
+                <div class="faq-q">Funciona no Google Sheets ou Docs?</div>
+                <div class="faq-a">Sim, os arquivos de planilhas e textos podem ser importados perfeitamente para o Google Drive para uso colaborativo em nuvem.</div>
             </div>
-            <div class="faq">
-                <h4>Tem mensalidade?</h4>
-                <p>Não. O pagamento é único e você pode usar os arquivos com quantos clientes quiser.</p>
+            <div class="faq-item">
+                <div class="faq-q">Substitui um advogado?</div>
+                <div class="faq-a">Não. Os arquivos protegem o seu escopo operacional, mas não configuram assessoria ou documento com validade legal irrestrita. Consulte um advogado para contratos oficiais.</div>
             </div>
-            
-            <div class="guarantee">
-                <div class="guarantee-icon">🛡️</div>
-                <div>
-                    <h3 style="margin: 0 0 5px 0;">Garantia de 7 Dias</h3>
-                    <p style="margin: 0;">Você pode solicitar o reembolso integral dentro do prazo de 7 dias. Se você baixar o GestorFlow, abrir os arquivos e achar que a organização não serve para o seu momento, o cancelamento é feito com um clique na plataforma da Kiwify.</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <button id="btn-comprar-baixo" class="btn">Quero organizar minha operação (R$ 47)</button>
+            <div class="faq-item">
+                <div class="faq-q">Posso revender os materiais?</div>
+                <div class="faq-a">Não. A licença é estritamente para uso individual na sua prestação de serviços como gestor. A revenda é proibida.</div>
             </div>
         </div>
+    </section>
+
+    <!-- 15. Final CTA -->
+    <section class="container text-center" style="padding-bottom: 120px;">
+        <h2 style="font-size: 3rem; margin-bottom: 20px;">Pare de improvisar a operação dos seus clientes</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;">Organize briefing, acessos, aprovações, relatórios e encerramentos em uma única esteira pronta para personalizar.</p>
+        <a href="#" class="btn checkout-btn-sales disabled" style="font-size: 1.2rem; padding: 20px 40px;">Checkout em configuração</a>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 20px;">Acesso digital entregue pela Kiwify após a confirmação do pagamento.</p>
+    </section>
+
+    <!-- Fixed Mobile Button -->
+    <div id="mobile-cta" class="fixed-mobile-cta">
+        <div class="fixed-mobile-cta-info">
+            <h4>GestorFlow</h4>
+            <p>Apenas R$ 47,00</p>
+        </div>
+        <a href="#" class="btn checkout-btn-sales disabled">Checkout</a>
     </div>
 
-    <div class="footer">
-        <p>GestorFlow &copy; 2026</p>
-        <p>Suporte: rangoxrangox@gmail.com</p>
-        <p>
-            <a href="termos.html">Termos de Uso</a> | 
-            <a href="privacidade.html">Política de Privacidade</a> | 
-            <a href="ferramenta.html">Ferramenta Gratuita de Onboarding</a>
-        </p>
-        <p style="font-size: 11px; margin-top: 20px;">
-            Aviso Legal: Os resultados podem variar de pessoa para pessoa. Ferramentas organizacionais ajudam na operação, mas não garantem lucro ou aquisição automática de clientes.
-        </p>
-    </div>
-    
-    <script src="config.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btnTopo = document.getElementById('btn-comprar-topo');
-            const btnBaixo = document.getElementById('btn-comprar-baixo');
-            const checkoutUrl = getSalesCheckoutUrl();
-            
-            if (checkoutUrl) {
-                const url = checkoutUrl;
-                btnTopo.innerText = "Quero organizar minha operação por R$ 47";
-                btnTopo.disabled = false;
-                btnTopo.onclick = function() { window.location.href = url; };
-                
-                btnBaixo.innerText = "Quero organizar minha operação por R$ 47";
-                btnBaixo.disabled = false;
-                btnBaixo.onclick = function() { window.location.href = url; };
-            } else {
-                btnTopo.disabled = true;
-                btnTopo.innerText = "Checkout em configuração";
-                btnBaixo.disabled = true;
-                btnBaixo.innerText = "Checkout em configuração";
-            }
-        });
-    </script>
+    <!-- 16. Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>GestorFlow</h4>
+                    <p style="font-size: 0.85rem; margin-bottom: 10px;">Sistema de Client Ops</p>
+                    <p style="font-size: 0.85rem; color: #fff;">Comercializado por:<br>Luana dos Santos</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="ferramenta.html">Ferramenta Gratuita</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suporte</h4>
+                    <p style="font-size: 0.85rem;"><a href="mailto:rangoxrangox@gmail.com">rangoxrangox@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>GestorFlow &copy; 2026. Todos os direitos reservados.</p>
+                <p style="margin-top: 10px; opacity: 0.6; font-size: 0.75rem;">Aviso: O produto não promete faturamento ou lucro e não substitui assessoria jurídica especializada (OAB).</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
