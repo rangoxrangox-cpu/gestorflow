@@ -1,5 +1,5 @@
 window.GESTORFLOW_CONFIG = {
-  checkoutUrl: ""
+  checkoutUrl: "https://pay.kiwify.com.br/GDbTNjc"
 };
 
 function getCheckoutBaseUrl() {
