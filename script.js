@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileCta && heroSection) {
         window.addEventListener('scroll', () => {
-            // Mostrar a barra apenas se o usuário rolou além da hero section
-            // e se estiver em tela de celular (< 768px)
             if (window.innerWidth <= 768 && window.scrollY > heroSection.offsetHeight / 2) {
                 mobileCta.classList.add('visible');
             } else {
@@ -96,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             resultDiv.innerHTML = checklistHTML;
 
-            // Funcionalidade de cópia
             const copyBtn = document.getElementById('btn-copy');
             if (copyBtn) {
                 copyBtn.addEventListener('click', () => {
