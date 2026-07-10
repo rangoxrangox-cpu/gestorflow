@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador Gratuito de Checklist de Onboarding para Gestores de Tráfego</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { font-size: 24px; color: #1e293b; text-align: center; }
+        label { font-weight: 600; display: block; margin-top: 20px; margin-bottom: 8px; }
+        select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 16px; }
+        button { width: 100%; background-color: #2563eb; color: #fff; padding: 12px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; margin-top: 25px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #1d4ed8; }
+        #resultado { display: none; margin-top: 30px; padding: 20px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; }
+        .oferta { margin-top: 30px; padding: 20px; background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 4px; text-align: center; }
+        .btn-oferta { background-color: #d97706; display: inline-block; padding: 10px 20px; margin-top: 15px; color: white; text-decoration: none; font-weight: bold; border-radius: 4px; cursor: pointer; border: none; }
+        .btn-oferta:hover { background-color: #b45309; }
+        .btn-oferta:disabled { background-color: #fcd34d; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Gerador Gratuito de Checklist de Onboarding</h1>
+    <p style="text-align:center; color: #64748b;">Descubra o que você precisa pedir ao seu novo cliente antes de subir campanhas.</p>
+    
+    <label for="plataforma">Qual plataforma principal você usará?</label>
+    <select id="plataforma">
+        <option value="meta">Meta Ads (Facebook e Instagram)</option>
+        <option value="google">Google Ads</option>
+        <option value="ambas">Meta Ads e Google Ads</option>
+    </select>
+
+    <label for="tipoCliente">Qual é o tipo de negócio do cliente?</label>
+    <select id="tipoCliente">
+        <option value="local">Negócio Local (Loja física, Clínica, Delivery)</option>
+        <option value="infoproduto">Infoproduto (Cursos, E-books)</option>
+        <option value="ecommerce">E-commerce (Loja Virtual)</option>
+    </select>
+
+    <button onclick="gerarChecklist()">Gerar Meu Checklist Gratuito</button>
+
+    <div id="resultado">
+        <h3 style="margin-top:0;">Seu Checklist Personalizado:</h3>
+        <ul id="listaChecklist"></ul>
+        
+        <div class="oferta">
+            <h4 style="margin:0; color:#92400e;">Este é apenas o checklist inicial.</h4>
+            <p style="margin-top:10px; font-size:14px;">Organize o briefing completo, matriz de responsabilidades, aprovação de campanhas, dashboards e offboarding com o Sistema <b>GestorFlow</b>.</p>
+            <button id="btn-oferta-comprar" class="btn-oferta">Checkout em configuração</button>
+        </div>
+    </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnOferta = document.getElementById('btn-oferta-comprar');
+        const checkoutUrl = getToolCheckoutUrl();
+        
+        if (checkoutUrl) {
+            btnOferta.innerText = "Quero organizar minha operação por R$ 47";
+            btnOferta.disabled = false;
+            btnOferta.onclick = function() {
+                window.location.href = checkoutUrl;
+            };
+        } else {
+            btnOferta.disabled = true;
+            btnOferta.innerText = "Checkout em configuração";
+        }
+    });
+
+    function gerarChecklist() {
+        const plat = document.getElementById('plataforma').value;
+        const tipo = document.getElementById('tipoCliente').value;
+        const lista = document.getElementById('listaChecklist');
+        lista.innerHTML = ''; 
+        
+        const tarefas = [];
+        tarefas.push('Enviar Formulário de Briefing');
+        tarefas.push('Definir Escopo e Valores Financeiros');
+        
+        if (plat === 'meta' || plat === 'ambas') {
+            tarefas.push('Pedir acesso de parceiro no Gerenciador de Negócios (Business Manager)');
+            tarefas.push('Solicitar acesso à Página do Facebook e Conta do Instagram');
+            tarefas.push('Verificar configuração do Pixel da Meta');
+        }
+        if (plat === 'google' || plat === 'ambas') {
+            tarefas.push('Pedir ID da Conta do Google Ads (10 dígitos) para enviar convite');
+            tarefas.push('Verificar acesso ao Google Analytics 4');
+        }
+        if (tipo === 'local') {
+            tarefas.push('Configurar campanhas focadas em WhatsApp ou Rota para Loja Física');
+        } else if (tipo === 'ecommerce') {
+            tarefas.push('Solicitar catálogo de produtos em XML / integração com Shopify/Nuvemshop');
+        }
+
+        tarefas.forEach(t => {
+            const li = document.createElement('li');
+            li.style.marginBottom = '10px';
+            li.innerHTML = '<input type="checkbox" style="margin-right: 10px;">' + t;
+            lista.appendChild(li);
+        });
+
+        document.getElementById('resultado').style.display = 'block';
+    }
+</script>
+</body>
+</html>

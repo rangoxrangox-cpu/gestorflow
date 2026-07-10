@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestorFlow - Sistema Operacional para Gestores de Tráfego</title>
+    <meta name="description" content="Fechou seu primeiro cliente de tráfego pago e não sabe como organizar a operação? Use uma esteira pronta para organizar entregas e atender com extremo profissionalismo.">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; }
+        .hero { background: #0f172a; color: white; text-align: center; padding: 60px 20px; }
+        .hero h1 { font-size: 32px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; max-width: 600px; margin: 0 auto; color: #cbd5e1; }
+        .content { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .btn { display: inline-block; background: #2563eb; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 30px; cursor: pointer; }
+        .btn:hover { background: #1d4ed8; }
+        .btn:disabled, .btn[disabled] { background: #94a3b8; cursor: not-allowed; }
+        .footer { text-align: center; padding: 20px; color: #64748b; font-size: 14px; }
+        .footer a { color: #64748b; margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Fechou seu primeiro cliente de tráfego pago e não sabe como organizar a operação?</h1>
+        <p>Use uma esteira pronta para coletar acessos, organizar entregas, registrar aprovações e atender com extremo profissionalismo. Chega de perder informações no WhatsApp.</p>
+        <button id="btn-comprar" class="btn">Checkout em configuração</button>
+    </div>
+    <div class="content">
+        <h2>O que você leva hoje:</h2>
+        <ul>
+            <li>Guia Comece Aqui</li>
+            <li>Formulário de Briefing</li>
+            <li>Checklist de Onboarding e Acessos</li>
+            <li>Matriz de Responsabilidades</li>
+            <li>Dashboard Central em Excel</li>
+            <li>Banco de Mensagens</li>
+        </ul>
+        <p>Tudo 100% editável e profissional. (Garantia padrão de 7 dias).</p>
+    </div>
+    <div class="footer">
+        <p>GestorFlow &copy; 2026</p>
+        <a href="termos.html">Termos de Uso</a> | <a href="privacidade.html">Política de Privacidade</a> | <a href="ferramenta.html">Ferramenta Gratuita</a>
+    </div>
+    
+    <script src="config.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('btn-comprar');
+            const checkoutUrl = getSalesCheckoutUrl();
+            
+            if (checkoutUrl) {
+                btn.innerText = "Quero organizar meus clientes por R$ 47";
+                btn.disabled = false;
+                btn.onclick = function() {
+                    window.location.href = checkoutUrl;
+                };
+            } else {
+                btn.disabled = true;
+                btn.innerText = "Checkout em configuração";
+            }
+        });
+    </script>
+</body>
+</html>
